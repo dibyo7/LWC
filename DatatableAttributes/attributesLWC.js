@@ -7,7 +7,6 @@ import {ShowToastEvent} from 'lightning/platformShowToastEvent';
 let i = 0;
 let k = 0;
 
-
 export default class AttributesLWC extends LightningElement {
     @api jsonStr = '';
     @track error;
