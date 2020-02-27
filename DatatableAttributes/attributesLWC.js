@@ -19,7 +19,9 @@ export default class AttributesLWC extends LightningElement {
     
     @api objectName = 'Account';
     @api totalFields = 4;
-    
+
+    //default values for lightning app builder configuration
+    //variables can be changed in app builder as per requirements
     @api label1 = 'label1';
     @api label2 = 'label2';
     @api label3 = 'label3';
