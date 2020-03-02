@@ -5,40 +5,60 @@ import {refreshApex} from '@salesforce/apex';
 import {ShowToastEvent} from 'lightning/platformShowToastEvent';
 
 let i = 0;
-let k = 0;
+//let k = 0;
+let j = 0;
+let m = 0;
+let n = 0;
+
 
 export default class AttributesLWC extends LightningElement {
-    @api jsonStr = '';
+
+    fL = [];
+    fAPI = [];
+    edit = [];
+    keyValue = [];
+    jsonStr = '';
     @track error;
     @track draftValues = [];
-    @track cols;
-    @track keyValue = [];
-    @track fieldLabels = [];
-    @track fieldAPInames = [];
-    @track editables= []; 
-    
-    @api objectName = 'Account';
+       
+    @api objectName = 'Contact';
     @api totalFields = 4;
 
-    //default values for lightning app builder configuration
-    //variables can be changed in app builder as per requirements
-    @api label1 = 'label1';
-    @api label2 = 'label2';
-    @api label3 = 'label3';
-    @api label4 = 'label4';
-    @api label5 = 'label5';
+    @api label1 = 'First Name';
+    @api label2 = 'Last Name';
+    @api label3 = 'Title';
+    @api label4 = 'Phone';
+    @api label5 = 'Email';
     @api label6 = 'label6';
     @api label7 = 'label7';
     @api label8 = 'label8';
 
-    @api field1 = 'field1';
-    @api field2 = 'field2';
-    @api field3 = 'field3';
-    @api field4 = 'field4';
-    @api field5 = 'field5';
+    if(totalFields){
+        this.fL = [];
+        for(j = 1; j <= this.totalFields; j++){
+            labelVar = eval('label' + j);
+            this.fL.push(labelVar);
+        }
+    }
+    @track fieldLabels = this.fL;
+
+    @api field1 = 'FirstName';
+    @api field2 = 'LastName';
+    @api field3 = 'Title';
+    @api field4 = 'Phone';
+    @api field5 = 'Email';
     @api field6 = 'field6';
     @api field7 = 'field7';
     @api field8 = 'filed8';
+    
+    if(totalFields){
+        this.fAPI = [];
+        for(m = 1; m <= this.totalFields; m++){
+            fieldVar = eval('field' + m);
+            this.fAPI.push(fieldVar);
+        }
+    }
+    @track fieldAPInames = this.fAPI;
 
     @api editable1 = false;
     @api editable2 = false;
@@ -48,11 +68,28 @@ export default class AttributesLWC extends LightningElement {
     @api editable6 = false;
     @api editable7 = false;
     @api editable8 = false;
-  
+
     if(totalFields){
-        //this.fieldAPInames = [];
-        //this.fieldLabels = [];
-        //this.editables = [];
+        this.edit = [];
+        for(n = 1; n <= this.totalFields; n++){
+            editVar = eval('editable' + n);
+            this.edit.push(editVar);
+        }
+    }
+    @track editables = this.edit; 
+    
+    if(totalFields){
+        this.keyValue = [];
+        for(i = 0; i < this.totalFields; i++){
+            this.keyValue.push({ label: this.fieldLabels[i], fieldName: this.fieldAPInames[i], editable: this.editables[i]});
+        }
+    }
+    @track colms = this.keyValue;
+    /*if(totalFields){
+        this.fieldAPInames = [];
+        this.fieldLabels = [];
+        this.editables = [];
+        this.keyValue = [];
 
         for(k = 1; k <= this.totalFields; k++){
             labelVar = eval('label' + k);
@@ -69,8 +106,7 @@ export default class AttributesLWC extends LightningElement {
             this.keyValue.push({ label: this.fieldLabels[i], fieldName: this.fieldAPInames[i], editable: this.editables[i]});
         }   
         
-    }
-    cols = this.keyValue;
+    }*/
     jsonStr = JSON.stringify(this.fieldAPInames);
         
     @wire(fieldRetrieve,{objectName: '$objectName', jsonStr: '$jsonStr'})
@@ -92,8 +128,7 @@ export default class AttributesLWC extends LightningElement {
                 })
             );
             // Clear all draft values
-            this.draftValues = [];
-        
+            this.draftValues = [];        
             // Display fresh data in the datatable
             return refreshApex(this.retrievedData);
         }).catch(error => {
@@ -103,3 +138,4 @@ export default class AttributesLWC extends LightningElement {
     }
 
 }
+
