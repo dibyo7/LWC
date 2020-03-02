@@ -17,35 +17,35 @@
             <property name="totalFields" type="Integer" label="Total Columns(min-1, max-8)"/>
 
             <property name="field1" type="String" label="Field API Name(Column 1)"/>
-                <property name="label1" type="String" default="Enter Field Label" label="Column Name"/>          
+                <property name="label1" type="String" label="Column Name"/>          
                 <property name="editable1" type="Boolean" default="false" label="Editable?"/>
 
             <property name="field2" type="String"  label="Field API Name(Column 2)"/>
-                <property name="label2" type="String" default="Enter Field Label" label="Column Name"/>
+                <property name="label2" type="String" label="Column Name"/>
                 <property name="editable2" type="Boolean" default="false" label="Editable?"/>
 
             <property name="field3" type="String"  label="Field API Name(Column 3)"/>
-                <property name="label3" type="String" default="Enter Field Label" label="Column Name"/>
+                <property name="label3" type="String" label="Column Name"/>
                 <property name="editable3" type="Boolean" default="false" label="Editable?"/>
             
             <property name="field4" type="String" label="Field API Name(Column 4)"/>
-                <property name="label4" type="String" default="Enter Field Label" label="Column Name"/>
+                <property name="label4" type="String" label="Column Name"/>
                 <property name="editable4" type="Boolean" default="false" label="Editable?"/>
 
             <property name="field5" type="String" label="Field API Name(Column 5)"/>
-                <property name="label5" type="String" default="Enter Field Label" label="Column Name"/>
+                <property name="label5" type="String" label="Column Name"/>
                 <property name="editable5" type="Boolean" default="false" label="Editable?"/>
 
             <property name="field6" type="String" label="Field API Name(Column 6)"/>
-                <property name="label6" type="String" default="Enter Field Label" label="Column Name"/>
+                <property name="label6" type="String" label="Column Name"/>
                 <property name="editable6" type="Boolean" default="false" label="Editable?"/>
 
             <property name="field7" type="String" label="Field API Name(Column 7)"/>
-                <property name="label7" type="String" default="Enter Field Label" label="Column Name"/>
+                <property name="label7" type="String" label="Column Name"/>
                 <property name="editable7" type="Boolean" default="false" label="Editable?"/>
 
             <property name="field8" type="String" label="Field API Name(Column 8)"/>
-                <property name="label8" type="String" default="Enter Field Label" label="Column Name"/>
+                <property name="label8" type="String" label="Column Name"/>
                 <property name="editable8" type="Boolean" default="false" label="Editable?"/>
 
         </targetConfig>
