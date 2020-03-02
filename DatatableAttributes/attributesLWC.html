@@ -1,6 +1,7 @@
 <template>
     <lightning-card title="Datatable using Design Attributes" icon-name="custom:custom63">
         <div class="slds-m-around_medium">
+            
             <template if:true={retrievedData.data}>
                 <lightning-datatable 
                     key-field="Id"
@@ -9,13 +10,12 @@
                     onsave={handleSave}
                     draft-values={draftValues}>
                 </lightning-datatable>
-
             </template>
+            
             <template if:true={retrievedData.error}>
                 <p>Error, no data retrieved</p>
             </template>
 
         </div>
-
     </lightning-card>
 </template>
