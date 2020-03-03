@@ -1,3 +1,5 @@
+Datatable using Lightning Web Components
+
 Features of this datatable:-
   1. Enter the sObject name along with associated fields(max-8) in Lightning App Builder.
   2. Field labels can be configured in App builder.
