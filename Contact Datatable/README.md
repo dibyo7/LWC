@@ -1,2 +1,2 @@
-This datatable retrieves Contact records.
-Inline editable
+1. This datatable retrieves only Contact records.
+2. Inline editable
