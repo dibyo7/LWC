@@ -8,7 +8,7 @@ import LASTNAME_FIELD from '@salesforce/schema/Contact.LastName';
 import ID_FIELD from '@salesforce/schema/Contact.Id';
 */
 const COLS = [
-    { label: 'First Name222', fieldName: 'FirstName', type: 'string', editable: true },
+    { label: 'First Name', fieldName: 'FirstName', type: 'string', editable: true },
     { label: 'Last Name', fieldName: 'LastName', type: 'string', editable: true},
     { label: 'Title', fieldName: 'Title', editable:true},
     { label: 'Phone', fieldName: 'Phone', editable: true},
